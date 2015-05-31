@@ -39,7 +39,7 @@ clean:
 	rm -rf *.out
 	rm -rf *.snm
 	rm -rf *.toc
-
+	rm -rf *.synctex.gz
 
 
 
