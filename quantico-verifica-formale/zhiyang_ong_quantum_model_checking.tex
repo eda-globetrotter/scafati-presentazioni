@@ -198,19 +198,45 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Typesetting Mathematical Equations in LaTeX Documents
-\section{Typesetting Mathematical Equations in {\rm \LaTeX}\ Documents}
+\section{Model Checking}
 
+%	Slide 1
 \frame
 {
-	\frametitle{Types of Mathematical Environments (1)}
+	\frametitle{Milestones in Model Checking (1)}
 
-	\begin{itemize} \itemsep 30pt
-	\item<1-> A mathematical expression can be included within a line of text using either of the following ways.
-	\item $\backslash$begin\{math\} {\it formula\_text} $\backslash$end\{math\}: \begin{math} \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}} \end{math}
-	\item $\backslash$( {\it formula\_text} $\backslash$): \( \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}} \)
-	\item \$ {\it formula\_text} \$: $\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}}$
+	\begin{itemize} %\itemsep -3pt
+	\item Traditional Model Checking via Linear Temporal Logic (LTL) or Computational Tree Logic (CTL): \vspace{-0.2cm}
+		\begin{enumerate} % \itemsep -2pt
+		\item Clarke, Jr., E. M., Grumberg, O., and Peled, D. A. Model Checking. MIT Press, Cambridge, MA, 1999.
+		\item Baier, C., and Katoen, J.-P. Principles of Model Checking. MIT Press, Cambridge, MA, 2008.
+		\end{enumerate}
+	\item Symbolic Model Checking. McMillan, K. L. Symbolic Model Checking: An approach to the state explosion problem. PhD thesis, Carnegie Mellon University, Pittsburgh, PA, May 1992. Or, DOI: 10.1007/978-1-4615-3190-6
+	\item Bounded Model Checking. Biere, A., Cimatti, A., Clarke, E. M., Strichman, O., and Zhu, Y. Bounded model checking. In Advances in Computers, vol. 58 of Advances in Computers. Elsevier Science Publishing, New York, NY, 2003, pp. 117--148.
 	\end{itemize}
 }
+
+
+
+
+%	Slide 2
+\frame
+{
+	\frametitle{Milestones in Model Checking (2)}
+
+	\begin{itemize} %\itemsep -3pt
+	\item CounterExample-Guided Abstraction Refinement (CEGAR). Clarke, E., Grumberg, O., Jha, S., Lu, Y., and Veith, H. Counterexample-guided abstraction refinement. In Proceedings of the 12th International Conference on Computer Aided Verification (CAV 2000) (Chicago, IL, July 15?19 2000), vol. 1855 of Lecture Notes in Computer Science, Springer-Verlag Berlin Heidelberg, pp. 154?169.
+	\item Property Directed Reachability (PDR), or Incremental Construction of Inductive Clauses for Indubitable Correctness (IC3). See \url{http://theory.stanford.edu/~arbrad/}.
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -630,64 +656,143 @@ f(n) =
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section{Current Research Interests}
-%
-%\subsection{Current Research Topic}
-%
-%\frame
-%{
-%	\frametitle{Current Research Interests and Topic}
-%
-%	\begin{itemize}
-%	\item<1-> Current Research Interests: \vspace{-0.05cm}
-%		\begin{itemize} \itemsep -1pt
-%		\item Design Automation of heterogeneous VLSI systems
-%		\item Formal verification of analog and mixed-signal VLSI circuits
-%		\item Symbolic-numeric techniques for verifying AMS circuits
-%		\end{itemize}
-%	\item<2-> Current Research Topic: \vspace{-0.05cm}
-%		\begin{itemize} \itemsep -1pt
-%		\item Extend HIFSuite for SystemC-AMS
-%		\item Improve the co-simulation of hybrid systems
-%		\item Use SystemC-AMS extension to design and verify heterogeneous VLSI systems
-%		\end{itemize}
-%	\item<2-> Research Advisor + Research Lab: \vspace{-0.05cm}
-%		\begin{itemize} \itemsep -1pt
-%		\item Prof. Franco Fummi
-%		\item ESD (Electronic Systems Design) research group
-%		\end{itemize}
-%	\end{itemize}
-%}
+\section{Interesting Research Projects???}
+
+\subsection{Other Quantum Formal Verification Topics}
+
+
+%	Slide #1
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (1)}
+
+	\begin{itemize}
+	\item Reachability analysis: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item 
+		\item Possible solution: Quantum partially-observable Markov decision processes (QMDPs)
+		\item Reference: Shenggang Ying and Mingsheng Ying, ``Reachability Analysis of Quantum Markov Decision Processes,'' {\it arXiv}, Cornell University, Ithaca, NY, July 9, 2014. Available online from {\it arXiv} as Version 2 at: \url{http://arxiv.org/abs/1406.6146v2}; May 30, 2015 was the last accessed date.
+%	\cite{Ying2014}
+		\end{itemize}
+	\item Quantum Equivalence Checking: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item Given 2 models of a quantum robot, determine if they are functionally equivalent.
+		\item Use quantum information decision diagrams (QuIDD), global-phase equivalence, and relative-phase equivalence (Viamontes et al., 2009).
+		\item Ditto for tensor calculus, dynamic tensor products, partial tracing.
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+%	Slide #2
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (2)}
+
+	\begin{itemize}
+	\item SMT-based quantum formal verification: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item Use SMT solver (decision procedure for satisfiability modulo theories) as reasoning engine for formal verification
+		\item Use reasoning/computational engine for hybrid model checking and theorem proving or model checking and equivalence checking
+		\item Use fragments of 1st-order logic, such as differential dynamic logics, for hybrid systems verification; see work by Prof. Andr{\'{e}} Platzer at \url{http://symbolaris.com/}.
+		\item Get the quantum logic equivalent of these.
+		\item References: \vspace{-0.1cm}
+			\begin{enumerate} \itemsep -1pt
+			\item Platzer, A. Logical Analysis of Hybrid Systems: Proving Theorems for Complex Dynamics. Springer- Verlag Berlin Heidelberg, Heidelberg, Germany, 2010.
+			\end{enumerate}
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+%	Slide #3
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (3)}
+
+	\begin{itemize}
+	\item Exploit equivalence of maximum satisfiability (Max-SAT), pseudo-boolean optimization (PBO) , and wighted PBO: \vspace{-0.2cm}
+		\begin{enumerate} \itemsep -2pt
+		\item Use meta-algorithms via algorithmic portfolio optimization to select the ``best'' or set of good solutions (Max-SAT, Max-SMT, PBO, or Weighted PBO).
+		\item Engineer quantum logic variant/equivalent.
+		\item Turn numerical models in the time domain to algebraic models in the frequency domain, via transform methods (e.g., Fourier transform, Laplace transform, and z-transform) and approximations via parameterization and (quasi-) linearization
+		\item The meta-algorithms enable us to plug-and-play (or plug-and-pray) components for quantum formal verification.
+		\end{enumerate}
+	\end{itemize}
+}
+
+
+
+
+
+
+%	Slide #4
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (4)}
+
+	\begin{itemize}
+	\item Use Quantum Model Order Reduction for Approximation: \vspace{-0.2cm}
+		\begin{enumerate} \itemsep -2pt
+		\item Quantum Model Order Reduction approximates components of quantum robots as continuous-time dynamical systems.
+		\item Reference: [1] Viamontes, G. F., Markov, I. L., and Hayes, J. P. Quantum Circuit Simulation. Springer Science+Business Media, B.V., Dordrecht, The Netherlands, 2009.
+		\end{enumerate}
+	\end{itemize}
+}
+
+%	quantum computation, quantum computers, quantum computing, EDA for quantum computers, quantum circuits, quantum circuit simulation, gate modeling, linear algebra, quantum mechanics, matrix algebra, matrix theory, quantum information processing, stabilizer circuits, decision diagrams, quantum information decision diagrams, QuIDD, state-vector simulation, density-matrix simulation, equivalence checking, quantum equivalence checking, global-phase equivalence, relative-phase equivalence, empirical validation, QuIDD-based simulation, tensor products, tensor algebra, tensor analysis, tensor methods, tensors, tensor calculus, dynamic tensor products, partial tracing, Grover's search algorithm, Shor's factoring algorithm
+
 
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{References}
-
-\frame
-{
-	\frametitle{References}
-
-%	\begin{itemize}
-%	\item \cite{Weng2011}
-%	\end{itemize}
+%\section{References}
+%
+%\frame
+%{
+%	\frametitle{References}
+%
+%%	\begin{itemize}
+%%	\item \cite{Weng2011}
+%%	\end{itemize}
+%%}
+%
+%
+%	{\linespread{1}
+%	%\bibliographystyle{IEEEtran}
+%	\bibliographystyle{plain}
+%	%\bibliography{./others/references}
+%	%\bibliography{/data/others/notes/references}
+%	\bibliography{/data/research/antipastobibtex/references}
+%	%\addcontentsline{toc}{chapter}{Bibliography}
+%	}
 %}
-
-
-	{\linespread{1}
-	%\bibliographystyle{IEEEtran}
-	\bibliographystyle{plain}
-	%\bibliography{./others/references}
-	%\bibliography{/data/others/notes/references}
-	\bibliography{/data/research/antipastobibtex/references}
-	%\addcontentsline{toc}{chapter}{Bibliography}
-	}
-}
 
 \end{document}
 
 
-%	Email stuff
-%	  I told Prof. Chang about the VLSI design classes that I have taken at the University of Southern California and the University of Adelaide, including the VLSI design projects that I have completed. So, I asked him if I can take all the EDA classes, and a number of math/CS related classes that will help me in my research, such as the nonlinear programming class and parallel computing (or concurrent programming, or GPGPU programming) classes. I want to avoid doing another VLSI design project involving painful manual/custom layout. I do not mind working on another RTL design project. However, since the semiconductor/electronics industry is moving towards using higher-level HDLs, such as SystemC (and SystemVerilog) for design entry and verification, I would like to take the "Hardware/Software Co-Design" class to improve my VLSI design skills. Here, I am trying to do this in lieu of the 
+%
+%	Trying to delay the not-uncommon path of engineering Ph.D.s who end up becoming "PowerPoint engineers"... Hopefully, slapping together a bunch of presentation slides to talk about any topic in any reasonable finite amount of time is not the most useful skill that I would learn as a grad student... Hey, at least I did it in LaTeX/Beamer!!!
+
+
+
+
+
+
+ 
