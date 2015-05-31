@@ -1,0 +1,693 @@
+%	This LaTeX file is written by Zhiyang Ong as a template for creating presentation slides.
+
+%	The MIT License (MIT)
+
+%	Copyright (c) <2015> <Zhiyang Ong>
+
+%	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+%	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+%	Email address: echo "cukj -wb- 23wU4X5M589 TROJANS cqkH wiuz2y 0f Mw Stanford" | awk '{ sub("23wU4X5M589","F.d_c_b. ") sub("Stanford","d0mA1n"); print $5, $2, $8; for (i=1; i<=1; i++) print "6\b"; print $9, $7, $6 }' | sed y/kqcbuHwM62z/gnotrzadqmC/ | tr 'q' ' ' | tr -d [:cntrl:] | tr -d 'ir' | tr y "\n"
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Acknowledgement:
+%		This is based on a template provided to me by Dott. Francesco Stefanni, from the University of Verona in January 2011.
+
+
+
+
+%	Use the Beamer package to create the presentation slides.
+\documentclass[xcolor={usenames,dvipsnames},hyperref={hyperindex,bookmarks}]{beamer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Import and Customize LaTeX packages.
+\usepackage{beamerthemesplit}
+
+%\mode<presentation>
+%{ \usetheme{boxes} }
+
+%	Select the presentation mode.
+\mode<presentation>{
+	\usetheme[logos=true,pagenumbers=true,background=true]{Esd}
+}
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+
+
+%	Import package to facilitate typesetting of algorithms.
+\usepackage{listings}
+
+\lstset{
+  language=C++,
+  tabsize=4,
+%  basicstyle=\ttfamily\color{black}\small,
+  basicstyle=\ttfamily\color{black},
+%  backgroundcolor=\color{lightgray},
+%  backgroundcolor=\color{white},
+  keywordstyle=\color{Purple}\bfseries,
+  identifierstyle=\color{OliveGreen},
+  commentstyle=\color{Gray}\itshape,
+  stringstyle=\color{CarnationPink},
+  showstringspaces=false,
+  showtabs=false,
+  showspaces=false
+}
+
+
+\definecolor{lightgray}{gray}{0.95}
+\font\emailtt=cmtt9
+
+%	Set up configuration for hyperlinks.
+%\usepackage[pdftex]{hyperref}	-- Option clash
+\hypersetup{
+    pdftitle={Programming Style for C},     % title
+    pdfauthor={Francesco Stefanni},                 % author
+    pdfsubject={A programming style for C}, % subject of the document
+    pdfcreator={Creator},                           % creator of the document
+    pdfproducer={dvipdft},                          % producer of the document
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfkeywords={LaTeX, graphics, color},
+%    pdfkeywords={C, C++, programming style},        % list of keywords
+%
+%    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobats bookmarks
+    pdftoolbar=true,        % show Acrobats toolbar?
+    pdfmenubar=true,        % show Acrobats menu?
+    pdffitwindow=false,     % window fit to page when opened
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfpagemode=UseOutlines,bookmarks, bookmarksopen,
+	pdfstartview=FitH, colorlinks, linkcolor=blue, citecolor=blue, urlcolor=red,
+%    pdfstartview={Fit},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	colorlinks=red,        % false: boxed links; true: colored links
+	linkcolor=red,          % color of internal links
+%    colorlinks=false,        % false: boxed links; true: colored links
+%    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red,           % color of external links
+    pdfpagemode=FullScreen
+    %
+    %pdfpagelabels=false
+}
+
+%\usepackage[all]{hypcap}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Added by Zhiyang Ong on Feb 7, 2011 to allow figures to be places side-by-side
+%\usepackage{subfigure}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	First slide of the presentation
+\title[Quantum Model Checking]
+{\huge Model Checking Quantum Robots}
+\subtitle{Suggestions for Formally Verifying Quantum Robots}
+\author{Zhiyang Ong}
+\institute{
+	Department of Electrical and Computer Engineering \\
+	Dwight Look College of Engineering,\\
+	Texas A\&M University \\
+	College Station, TX
+}
+\date{\today}	% (optional)
+\subject{Subject Title}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Do nothing in this section of the LaTeX document
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+%	Table of Contents
+\AtBeginSection[]		% Do nothing for \subsection*
+{
+	\begin{frame}
+%		\frametitle{\textcolor{yellow}{Table of Contents}}
+		\frametitle{Table of Contents}
+%		\textcolor{yellow}{\tableofcontents[currentsection]}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+\AtBeginSubsection[]		% Do nothing for \subsection*
+{
+\begin{frame}
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Slides begin HERE!!!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Acknowledgments
+%	Slide 2
+\section{Acknowledgments}
+\begin{frame}
+	\frametitle{Acknowledgment}
+	Dott. Francesco Stefanni, University of Verona \\
+	\ \\
+	\ \\
+	\ \\
+	Soon-to-be Dr. Prateek Tandon, who initiated the formation of this reading group on quantum robotics.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Typesetting Mathematical Equations in LaTeX Documents
+\section{Typesetting Mathematical Equations in {\rm \LaTeX}\ Documents}
+
+\frame
+{
+	\frametitle{Types of Mathematical Environments (1)}
+
+	\begin{itemize} \itemsep 30pt
+	\item<1-> A mathematical expression can be included within a line of text using either of the following ways.
+	\item $\backslash$begin\{math\} {\it formula\_text} $\backslash$end\{math\}: \begin{math} \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}} \end{math}
+	\item $\backslash$( {\it formula\_text} $\backslash$): \( \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}} \)
+	\item \$ {\it formula\_text} \$: $\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}}$
+	\end{itemize}
+}
+
+
+
+
+\frame
+{
+	\frametitle{Types of Mathematical Environments (2): Mathematical expressions that is separate from the main text}
+	%\subframetitle{Mathematical expressions that is separate from the main text}
+
+	\begin{itemize} \itemsep -10pt
+	%\item Mathematical expressions that is separate from the main text can be included using either of the following equivalent ways.
+	\item To include mathematical expressions without sequential equation numbers: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -15pt
+		\item $\backslash$begin\{displaymath\} {\it formula\_text} $\backslash$end\{displaymath\}: \begin{displaymath} \nabla \times \mathbf{B} = \mu_{0}(\mathbf{J} + \varepsilon_{0}\frac{\partial \mathbf{E}}{\partial t}) \end{displaymath}
+		\item \$\$ {\it formula\_text} \$\$: $$ \nabla \times \mathbf{B} = \mu_{0}(\mathbf{J} + \varepsilon_{0}\frac{\partial \mathbf{E}}{\partial t}) $$
+		\end{itemize}
+	\item To include mathematical expressions with sequential equation numbers: $\backslash$begin\{equation\}$\backslash$label\{eqn:default\} {\it formula\_text} $\backslash$end\{equation\}
+		\begin{equation}\label{eqn:1} \nabla \times \mathbf{B} = \mu_{0}(\mathbf{J} + \varepsilon_{0}\frac{\partial \mathbf{E}}{\partial t}) \end{equation}			\end{itemize}
+}
+
+
+\frame
+{
+	\frametitle{Cross Referencing Equations, Tables, and Figures.}
+
+	This 	refers to Equation \ref{eqn:1}, while this refers to the random figure, Figure \ref{fig:random}. I am referring to Equations \ref{eqn:5}. \\ %I am referring to Equations \ref{eqn:2}, \ref{eqn:3}, and \ref{eqn:4}. 
+	\ \\
+	\ \\
+	I am referring to Table \ref{tab:simple}.
+}
+
+
+
+
+\frame
+{
+	\frametitle{Elements of Math Mode}
+
+	\begin{itemize} %\itemsep -10pt
+	\item Mathematical Symbols: \$$+, -, =, <, >, /, |, [, ]$\$
+	\item Exponents (superscript) and indices (subscript): %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item \$x$^{\land}$\{2\}\$ typesets into $x^{2}$
+		\item \$x\_\{2\}\$ typesets into $x_{2}$
+		\end{itemize}
+	\item Fractions: $\backslash$frac\{{\it numerator}\}\{{\it denominator}\}, $\frac{1}{2}$
+	\item Roots: $\backslash$sqrt\{root\}\{argument\}. E.g., $\sqrt[3]{8}$
+	\item Continuation dots, ellipsis: $\backslash$dots, \dots; $\backslash$cdots, $\cdots$; $\backslash$vdots, $\vdots$; and $\backslash$ddots, $\ddots$. 
+	\end{itemize}
+}
+
+
+
+
+\frame
+{
+	\frametitle{Mathematical Symbols}
+
+	\begin{itemize} %\itemsep -10pt
+	\item Greek symbols: $\backslash$alpha, $\alpha$
+	\item Calligraphy letters: $\backslash$mathcal\{A\}, $\mathcal{A}$
+	\item Binary operators: $\backslash$pm, $\pm$
+	\item Relations: $\backslash$ll, $\ll$
+	\item Arrows and pointers: $\backslash$Longrightarrow, $\Longrightarrow$
+	\item A comprehensive list of mathematical symbols can be found at \cite{Pakin2008}.
+	\end{itemize}
+}
+
+
+
+\frame
+{
+	\frametitle{Greek Symbols}
+
+	\begin{figure}[h]
+	\centering 
+%	\includegraphics[width=2.5in]{./pics/greek_symbols}
+	\caption{List of Greek symbols that can be typeset in \LaTeX}
+	\label{fig:greeksymbol}
+	\end{figure}
+}
+
+
+
+\frame
+{
+	\frametitle{Some Typesetting Tips}
+
+	\begin{itemize} %\itemsep -10pt
+	\item Automatically adjust brackets and braces with the $\backslash$left and $\backslash$right commands before the brackets and braces.
+	\item E.g., $\backslash$left[ $\backslash$frac\{1\}\{2\} $\backslash$right] $\left[ \frac{1}{\frac{3}{4}} \right]$
+	\item $\backslash$begin\{equation\}\\
+		f(n) = $\backslash$begin\{cases\}\\
+		case-1 \&: n is odd \\
+		case-2 \&: n is even \\
+		$\backslash$end\{cases\} \\
+		$\backslash$end\{equation\}
+	\item \begin{equation}
+f(n) = 
+	\begin{cases}
+	\label{eqn:5}
+	case-1 &: \mathrm{n\ is\ odd} \\
+	case-2 &: \mathrm{n\ is\ even} \\
+	\end{cases}
+\end{equation}
+	\end{itemize}
+}
+
+
+\frame
+{
+	\frametitle{Set of Equations}
+
+	$\backslash$begin\{gather\} \\
+	{\rm minimize}\ BLAH \\
+	$\backslash$underline\{x\} $\backslash$in S \\
+	{\rm subject\ to:} \\
+	%	constraints	\\
+	$\backslash$end\{gather\} \\
+	%\ \\
+	\begin{gather*}
+	\label{eqn:2}
+	{\rm minimize}\ f = a \cdot x^{2} + b \cdot x^{5} \\	%	objective function defined mathematically	\\
+	\label{eqn:3}
+	\underline{x} \in S \\
+	{\rm subject\ to:} \\
+	\label{eqn:4}
+		x - y < 6 \\
+		x + z > 7
+	%	constraints	\\
+\end{gather*}
+}
+
+
+\frame
+{
+	\frametitle{Matrices}
+
+	$\backslash$left $(\backslash$begin\{array\}\{ccc\}1 \& 0 \& 0 $\backslash\backslash$ 0 \& 1 \& 0 $\backslash\backslash$ 0 \& 0 \& 1 $\backslash$end\{array\} $\backslash$right$)$ \\
+	\ \\
+	\ \\
+	\ \\
+	$\left(\begin{array}{ccc}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1\end{array}\right)$
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Typesetting Tables in LaTeX Documents
+\section{Typesetting Tables in {\rm \LaTeX}\ Documents}
+
+\frame
+{
+	\frametitle{Typesetting Tables in {\rm \LaTeX}\ Documents (1)}
+
+	$\backslash$begin\{table\}[htdp] \\
+	$\backslash$caption\{default\}	%$\backslash$vspace\{-0.2in\} \\
+	$\backslash$label\{tab:default\} \\
+	$\backslash$begin\{center\} \\
+		$\backslash$begin\{tabular\}\{$|$c$|$c$|$c$|$c$|$\} \\
+		$\backslash$hline \\
+		Level \& Use \& Features \& Abstraction $\backslash\backslash$\\
+		$\backslash$hline \\
+		Level \& Use \& Features \& Abstraction $\backslash\backslash$\\
+		$\backslash$hline \\
+		Level \& Use \& Features \& Abstraction $\backslash\backslash$\\
+		$\backslash$hline \\
+		$\backslash$end\{tabular\} \\
+	$\backslash$end\{center\} \\
+	$\backslash$end\{table\}
+}
+
+\frame
+{
+	\frametitle{Typesetting Tables in {\rm \LaTeX}\ Documents (2)}
+
+	\begin{table}[htdp]
+\caption{A simple table that is typeset in \LaTeX.}%	\vspace{-0.2in}
+\label{tab:simple}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		Level & Use & Features & Abstraction \\
+		\hline
+		Level & Use & Features & Abstraction \\
+		\hline
+		Level & Use & Features & Abstraction \\
+		\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Including Graphics in LaTeX Documents
+\section{Including Graphics in {\rm \LaTeX}\ Documents}
+
+
+\frame
+{
+	\frametitle{Including Graphics in {\rm \LaTeX}\ Documents (1)}
+
+	$\backslash$begin\{figure\}[h] \\
+	$\backslash$centering \\
+	$\backslash$includegraphics[width=6in]\{ -- INSERT FILENAME OF FIGURE\} \\
+	$\backslash$caption\{INSERT CAPTION HERE\} \\
+	$\backslash$label\{fig:INSERT LABEL OF FIGURE\} \\
+        $\backslash$end\{figure\}
+}
+
+
+
+\frame
+{
+	\frametitle{Including Graphics in {\rm \LaTeX}\ Documents (2)}
+
+	\begin{figure}[h]
+\centering 
+\includegraphics[width=2in]{./pics/my_figure}
+\caption{A random figure.}
+\label{fig:random}
+\end{figure}
+}
+
+
+
+
+
+
+%        
+%        
+%        
+%        \section{Introduction}
+%        
+%        \subsection{Problem Description}
+%        
+%        \frame
+%        {
+%        	\frametitle{Context of the Problem}
+%        
+%        	\begin{itemize}
+%        %	\item<1-> University of Southern California, Los Angeles, CA, USA: \vspace{-0.05cm}
+%        	\item 
+%        %University of Southern California, Los Angeles, CA, USA: \vspace{-0.05cm}
+%        %		\begin{itemize} \itemsep -1pt
+%        %		\item \href{http://www.usc.edu}{http://www.usc.edu}
+%        %		\item Master of Science in Electrical Engineering
+%        %		\end{itemize}
+%        %%	\item<2-> University of Adelaide, Adelaide, South Australia, Australia: \vspace{-0.05cm}
+%        %	\item<2-> University of Adelaide, Adelaide, South Australia, Australia: \vspace{-0.05cm}
+%        %		\begin{itemize} \itemsep -1pt
+%        %		\item \href{http://www.adelaide.edu.au/}{http://www.adelaide.edu.au/}
+%        %		\item Bachelor of Engineering (Electrical and Electronic Engineering)
+%        %		\end{itemize}
+%        	\end{itemize}
+
+
+
+%\begin{figure}[ht]
+%	\begin{minipage}[t]{1.8in}
+%		\begin{center}
+%		\includegraphics[width=1in]{./pics/uscseal}
+%		\caption{Seal of the University of Southern California}
+%		\label{uscseal}
+%		%{\label{uscseal} This is the seal for USC.}
+%		\end{center}
+%	\end{minipage}
+%	%\hfill
+%	\hspace{0.5in}
+%	\begin{minipage}[t]{1.8in}
+%		\begin{center}
+%		\includegraphics[width=1in]{./pics/adelaideseal}
+%		\caption{Logo of the University of Adelaide}
+%		\label{adelaideseal}
+%		\end{center}
+%	\end{minipage}
+%\end{figure}
+%}
+
+
+%\begin{block}{WWW}
+%W SSSS
+%\end{block}
+%}
+%\url{http://www.usc.edu}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Background Information}
+
+%\subsection{Background Information}
+%
+%\frame
+%{
+%	\frametitle{Coursework Related to Electronic Design Automation}
+%
+%	\begin{itemize}
+%	\item<1-> University of Southern California: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Electronic Design Automation + Digital VLSI Testing: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item EE 680 -- Computer Aided Design of Digital Systems I
+%			\item EE 599/581 -- Mathematical Foundations for Computer Aided Design of VLSI Systems
+%			\item EE 658 -- Diagnosis and Design of Reliable Digital Systems
+%			\end{itemize}
+%		\item Digital VLSI Design: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item EE 477L -- MOS VLSI Circuit Design
+%			\item EE 577A/B -- VLSI System Design
+%			\end{itemize}
+%		\end{itemize}
+%	\item<2-> University of Adelaide: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Introductory Digital VLSI Design: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item Elec Eng 4037 -- Digital Microelectronics
+%			\item Elec Eng 3017 -- Digital Electronics
+%			\end{itemize}
+%		\item Software Engineering: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item Comp Sci 3006 -- Software Engineering and Project
+%			\end{itemize}
+%		\item Relevant classes for my research topic: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			%\item Elec Eng 4044 -- RF Engineering IV
+%			%\item Elec Eng 3021 -- Electrical Energy Systems
+%			%\item Elec Eng 4042 -- Power Electronics and Drive Systems
+%			\item Elec Eng 3015 -- Communications, Signals, \& Systems
+%			\item Elec Eng 3016 -- Control III
+%			\item Elec Eng 3018 -- RF Engineering III
+%			%\item Elec Eng 3020 -- Embedded Computer Systems
+%			\end{itemize}
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Research and Project Experience}
+%
+%\subsection{Problem Description}
+%
+%\frame
+%{
+%	\frametitle{Research Background}
+%
+%	\begin{itemize}
+%	\item<1-> Literature Review: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Robotic Surgery + Biomedical MEMS
+%		\end{itemize}
+%	\item<2-> Honors research project / Senior thesis: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Complex Systems + Evolutionary Computation
+%		\end{itemize}
+%	\item<3-> Masters Research Project: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Automatic Test Pattern Generation at Electronic System-Level (Attempted)
+%		\item Computer System Performance Analysis (vertical profiling)
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Research and Project Experience}
+
+%\subsection{Project Experience}
+%
+%\frame
+%{
+%	\frametitle{Project Experience}
+%
+%	\begin{itemize}
+%	\item<1-> EDA Software Development: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item ATPG for FPGA test generation system
+%		\item C++ Parser for IEEE STIL format
+%		\item Gate-level logic simulator for combinational VLSI circuits
+%		\item Software for crosstalk-aware gate sizing in VLSI circuits
+%		\end{itemize}
+%	\item<2-> Digital VLSI Design: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Viterbi decoder
+%		\item 32-kbit synchronous SRAM with 32-bit words
+%		\item 64-bit Ladner-Fischer tree adder
+%		\item 32-bit variable length carry-increment adder
+%		\end{itemize}
+%	\item<3-> Processor Design: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item 4-stage pipelined Troy Wideword Processor (128-bit datapath)
+%		\item 32-bit MIPS processor (multi-cycle \& pipeline implementations)
+%		\item AMD Am2901 microprocessor
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Current Research Interests}
+%
+%\subsection{Current Research Topic}
+%
+%\frame
+%{
+%	\frametitle{Current Research Interests and Topic}
+%
+%	\begin{itemize}
+%	\item<1-> Current Research Interests: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Design Automation of heterogeneous VLSI systems
+%		\item Formal verification of analog and mixed-signal VLSI circuits
+%		\item Symbolic-numeric techniques for verifying AMS circuits
+%		\end{itemize}
+%	\item<2-> Current Research Topic: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Extend HIFSuite for SystemC-AMS
+%		\item Improve the co-simulation of hybrid systems
+%		\item Use SystemC-AMS extension to design and verify heterogeneous VLSI systems
+%		\end{itemize}
+%	\item<2-> Research Advisor + Research Lab: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Prof. Franco Fummi
+%		\item ESD (Electronic Systems Design) research group
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{References}
+
+\frame
+{
+	\frametitle{References}
+
+%	\begin{itemize}
+%	\item \cite{Weng2011}
+%	\end{itemize}
+%}
+
+
+	{\linespread{1}
+	%\bibliographystyle{IEEEtran}
+	\bibliographystyle{plain}
+	%\bibliography{./others/references}
+	%\bibliography{/data/others/notes/references}
+	\bibliography{/data/research/antipastobibtex/references}
+	%\addcontentsline{toc}{chapter}{Bibliography}
+	}
+}
+
+\end{document}
+
+
+%	Email stuff
+%	  I told Prof. Chang about the VLSI design classes that I have taken at the University of Southern California and the University of Adelaide, including the VLSI design projects that I have completed. So, I asked him if I can take all the EDA classes, and a number of math/CS related classes that will help me in my research, such as the nonlinear programming class and parallel computing (or concurrent programming, or GPGPU programming) classes. I want to avoid doing another VLSI design project involving painful manual/custom layout. I do not mind working on another RTL design project. However, since the semiconductor/electronics industry is moving towards using higher-level HDLs, such as SystemC (and SystemVerilog) for design entry and verification, I would like to take the "Hardware/Software Co-Design" class to improve my VLSI design skills. Here, I am trying to do this in lieu of the 
