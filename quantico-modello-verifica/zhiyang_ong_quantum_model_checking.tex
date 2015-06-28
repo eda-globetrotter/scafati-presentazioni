@@ -211,11 +211,12 @@ Quantum Model Checking Isn't Evil}
 	\frametitle{Background Information}
 
 	\begin{itemize}
-	\item Designs of Quantum Robots must be verified, tested, and validated
+	\item Designs of quantum systems (e.g., quantum robots) must be verified, tested, and validated
 	\item Formally verify these designs via quantum model checking
 	\item Carry out quantum model checking on invariants of quantum automata.
 	\item Extend this to verify safety properties for reversible automata
 	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
+	\item Meet requirements for correctness, safety, \&\ reliability
 	\end{itemize}
 }
 
@@ -237,9 +238,9 @@ Quantum Model Checking Isn't Evil}
 		\begin{itemize}
 		\item i.e., specifications based on quantum automata
 		\end{itemize}
-	\item Input: Functional properties in linear temporal logic (LTL)
+	\item Input: Functional linear-time properties
 		\begin{itemize}
-		\item LTL invariants of quantum automata-based model
+		\item Linear-time invariants of quantum automata-based model
 		\end{itemize}
 	%\item System model based on quantum automata
 	%\item System propeties (i.e., invariants): invariants of quantum automata-based model.
@@ -252,11 +253,17 @@ Quantum Model Checking Isn't Evil}
 %	Slide 3
 \frame
 {
-	\frametitle{Milestones in Model Checking (2)}
+	\frametitle{Shortcomings of Traditional Model Checking}
 
 	\begin{itemize} %\itemsep -3pt
-	\item CounterExample-Guided Abstraction Refinement (CEGAR). Clarke, E., Grumberg, O., Jha, S., Lu, Y., and Veith, H. Counterexample-guided abstraction refinement. In Proceedings of the 12th International Conference on Computer Aided Verification (CAV 2000) (Chicago, IL, July 15?19 2000), vol. 1855 of Lecture Notes in Computer Science, Springer-Verlag Berlin Heidelberg, pp. 154?169.
-	\item Property Directed Reachability (PDR), or Incremental Construction of Inductive Clauses for Indubitable Correctness (IC3). See \url{http://theory.stanford.edu/~arbrad/}.
+	\item Cannot formalize behavior/functionality of quantum systems
+		\begin{itemize}
+		\item Discrete state spaces of classical systems are finite or countably finite
+		\item Continuous state spaces of quantum systems cannot be addressed by discrete state spaces
+		\item State spaces of quantum systems are continuous, even for finite-dimensional quantum systems
+		\end{itemize}
+	\item Cannot formally describe temporal properties of quantum systems
+	\item 
 	\end{itemize}
 }
 
