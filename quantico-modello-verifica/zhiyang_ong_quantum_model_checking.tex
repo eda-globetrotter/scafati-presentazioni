@@ -193,12 +193,16 @@ Quantum Model Checking Isn't Evil}
 %	Slide 0
 \section{Acknowledgments}
 \begin{frame}
-	\frametitle{Acknowledgment}
+	\frametitle{Acknowledgments}
 	Dott. Francesco Stefanni, University of Verona \\
 	\ \\
 	\ \\
 	\ \\
 	Soon-to-be Dr. Prateek Tandon, who initiated the formation of this reading group on quantum robotics.
+	\ \\
+	\ \\
+	\ \\
+	Reference: Ying, M., Li, Y., Yu, N., and Feng, Y. Model-checking linear-time properties of quantum systems. ACM Transactions on Computational Logic 15, 3 (July 2014), 22:1--22:31.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -283,7 +287,7 @@ Quantum Model Checking Isn't Evil}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Prior Works
-\section{Prior Works}
+%\section{Prior Works}
 
 %	Slide 4
 \frame
@@ -294,12 +298,71 @@ Quantum Model Checking Isn't Evil}
 	\item Almost all previous work use model checking to verify quantum communication protocols
 	\item Use quantum process algebra to verify quantum communication systems, including quantum error correction codes
 	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Design Decisions
+%\section{Design Decisions}
+
+%	Slide 5
+\frame
+{
+	\frametitle{Design Decisions}
+
+	\begin{itemize}
+	\item Quantum model checking framework for the formal verification of generic quantum systems
+		\begin{itemize}
+		\item Not just quantum communication systems
+		\end{itemize}
+	\item Use a formal method based on modeling quantum systems with quantum automaton
+		\begin{itemize}
+		\item Exploit similar work in quantum
+		\end{itemize}
+	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
 	\item Extend this to verify safety properties for reversible automata
 	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
 	\item Meet requirements for correctness, safety, \&\ reliability
 	\end{itemize}
 }
 
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Key Contributions of Ying2014a
+%\section{Key Contributions of (Ying 2014)}
+
+%	Slide 6
+\frame
+{
+	\frametitle{Key Contributions of (Ying 2014)}
+
+	\begin{itemize}
+	\item Almost all previous work use model checking to verify quantum communication protocols
+	\item Use quantum process algebra to verify quantum communication systems, including quantum error correction codes
+	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
+	\item Extend this to verify safety properties for reversible automata
+	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
+	\item Meet requirements for correctness, safety, \&\ reliability
+	\end{itemize}
+}
 
 
 
