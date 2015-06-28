@@ -202,29 +202,54 @@ Quantum Model Checking Isn't Evil}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Typesetting Mathematical Equations in LaTeX Documents
-\section{Model Checking}
+%	Quantum Model Checking Introduction
+\section{Quantum Model Checking Introduction}
 
 %	Slide 1
 \frame
 {
-	\frametitle{Milestones in Model Checking (1)}
+	\frametitle{Background Information}
 
-	\begin{itemize} %\itemsep -3pt
-	\item Traditional Model Checking via Linear Temporal Logic (LTL) or Computational Tree Logic (CTL): \vspace{-0.2cm}
-		\begin{enumerate} % \itemsep -2pt
-		\item Clarke, Jr., E. M., Grumberg, O., and Peled, D. A. Model Checking. MIT Press, Cambridge, MA, 1999.
-		\item Baier, C., and Katoen, J.-P. Principles of Model Checking. MIT Press, Cambridge, MA, 2008.
-		\end{enumerate}
-	\item Symbolic Model Checking. McMillan, K. L. Symbolic Model Checking: An approach to the state explosion problem. PhD thesis, Carnegie Mellon University, Pittsburgh, PA, May 1992. Or, DOI: 10.1007/978-1-4615-3190-6
-	\item Bounded Model Checking. Biere, A., Cimatti, A., Clarke, E. M., Strichman, O., and Zhu, Y. Bounded model checking. In Advances in Computers, vol. 58 of Advances in Computers. Elsevier Science Publishing, New York, NY, 2003, pp. 117--148.
+	\begin{itemize}
+	\item Designs of Quantum Robots must be verified, tested, and validated
+	\item Formally verify these designs via quantum model checking
+	\item Carry out quantum model checking on invariants of quantum automata.
+	\item Extend this to verify safety properties for reversible automata
+	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
 	\end{itemize}
 }
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Problem Statement
+%\section{Problem Statement}
+
 
 %	Slide 2
+\frame
+{
+	\frametitle{Problem Statement}
+
+	\begin{itemize} %\itemsep -2pt
+	\item Verify functional correctness of quantum systems.
+	\item Input: Description of system behavior
+		\begin{itemize}
+		\item i.e., specifications based on quantum automata
+		\end{itemize}
+	\item Input: Functional properties in linear temporal logic (LTL)
+		\begin{itemize}
+		\item LTL invariants of quantum automata-based model
+		\end{itemize}
+	%\item System model based on quantum automata
+	%\item System propeties (i.e., invariants): invariants of quantum automata-based model.
+	\item Output: Boolean flag indicating correct/incorrect system behavior/functionality.
+	\end{itemize}
+}
+
+
+
+%	Slide 3
 \frame
 {
 	\frametitle{Milestones in Model Checking (2)}
