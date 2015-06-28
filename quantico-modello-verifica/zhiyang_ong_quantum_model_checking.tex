@@ -190,7 +190,7 @@ Quantum Model Checking Isn't Evil}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Acknowledgments
-%	Slide 2
+%	Slide 0
 \section{Acknowledgments}
 \begin{frame}
 	\frametitle{Acknowledgment}
@@ -265,6 +265,9 @@ Quantum Model Checking Isn't Evil}
 		\item Discrete state spaces of classical systems are finite or countably finite
 		\item Continuous state spaces of quantum systems cannot be addressed by discrete state spaces
 		\item State spaces of quantum systems are continuous, even for finite-dimensional quantum systems
+		\item Need to examine a finite number of representative elements  (in an orthonormal basis) of the state space of a quantum system
+		\item Or, at most, examine countably infinitely many representative elements of this state space
+		\item Always preserve the linear algebraic structure of the representative elements [\& linear-time properties]
 		\end{itemize}
 	\item Cannot formally describe temporal properties of quantum systems
 	\end{itemize}
@@ -278,7 +281,24 @@ Quantum Model Checking Isn't Evil}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Prior Works
+\section{Prior Works}
 
+%	Slide 4
+\frame
+{
+	\frametitle{Prior Work}
+
+	\begin{itemize}
+	\item Almost all previous work use model checking to verify quantum communication protocols
+	\item Use quantum process algebra to verify quantum communication systems, including quantum error correction codes
+	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
+	\item Extend this to verify safety properties for reversible automata
+	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
+	\item Meet requirements for correctness, safety, \&\ reliability
+	\end{itemize}
+}
 
 
 
