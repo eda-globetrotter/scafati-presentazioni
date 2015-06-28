@@ -1,0 +1,525 @@
+%	This LaTeX file is written by Zhiyang Ong as a template for creating presentation slides.
+
+%	The MIT License (MIT)
+
+%	Copyright (c) <2015> <Zhiyang Ong>
+
+%	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+%	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+%	Email address: echo "cukj -wb- 23wU4X5M589 TROJANS cqkH wiuz2y 0f Mw Stanford" | awk '{ sub("23wU4X5M589","F.d_c_b. ") sub("Stanford","d0mA1n"); print $5, $2, $8; for (i=1; i<=1; i++) print "6\b"; print $9, $7, $6 }' | sed y/kqcbuHwM62z/gnotrzadqmC/ | tr 'q' ' ' | tr -d [:cntrl:] | tr -d 'ir' | tr y "\n"
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Acknowledgement:
+%		This is based on a template provided to me by Dott. Francesco Stefanni, from the University of Verona in January 2011.
+
+
+
+
+%	Use the Beamer package to create the presentation slides.
+\documentclass[xcolor={usenames,dvipsnames},hyperref={hyperindex,bookmarks}]{beamer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Import and Customize LaTeX packages.
+\usepackage{beamerthemesplit}
+
+%\mode<presentation>
+%{ \usetheme{boxes} }
+
+%	Select the presentation mode.
+\mode<presentation>{
+	\usetheme[logos=true,pagenumbers=true,background=true]{Esd}
+}
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+
+
+%	Import package to facilitate typesetting of algorithms.
+\usepackage{listings}
+
+\lstset{
+  language=C++,
+  tabsize=4,
+%  basicstyle=\ttfamily\color{black}\small,
+  basicstyle=\ttfamily\color{black},
+%  backgroundcolor=\color{lightgray},
+%  backgroundcolor=\color{white},
+  keywordstyle=\color{Purple}\bfseries,
+  identifierstyle=\color{OliveGreen},
+  commentstyle=\color{Gray}\itshape,
+  stringstyle=\color{CarnationPink},
+  showstringspaces=false,
+  showtabs=false,
+  showspaces=false
+}
+
+
+\definecolor{lightgray}{gray}{0.95}
+\font\emailtt=cmtt9
+
+%	Set up configuration for hyperlinks.
+%\usepackage[pdftex]{hyperref}	-- Option clash
+\hypersetup{
+    pdftitle={Programming Style for C},     % title
+    pdfauthor={Francesco Stefanni},                 % author
+    pdfsubject={A programming style for C}, % subject of the document
+    pdfcreator={Creator},                           % creator of the document
+    pdfproducer={dvipdft},                          % producer of the document
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfkeywords={LaTeX, graphics, color},
+%    pdfkeywords={C, C++, programming style},        % list of keywords
+%
+%    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobats bookmarks
+    pdftoolbar=true,        % show Acrobats toolbar?
+    pdfmenubar=true,        % show Acrobats menu?
+    pdffitwindow=false,     % window fit to page when opened
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfpagemode=UseOutlines,bookmarks, bookmarksopen,
+	pdfstartview=FitH, colorlinks, linkcolor=blue, citecolor=blue, urlcolor=red,
+%    pdfstartview={Fit},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	colorlinks=red,        % false: boxed links; true: colored links
+	linkcolor=red,          % color of internal links
+%    colorlinks=false,        % false: boxed links; true: colored links
+%    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red,           % color of external links
+    pdfpagemode=FullScreen
+    %
+    %pdfpagelabels=false
+}
+
+%\usepackage[all]{hypcap}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Added by Zhiyang Ong on Feb 7, 2011 to allow figures to be places side-by-side
+%\usepackage{subfigure}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%	Quantum Model Checking Is Not Evil: It Is Mandatory For Quantum Robots
+
+
+%	First slide of the presentation
+\title[Quantum Model Checking]
+{\huge 
+Quantum Model Checking Isn't Evil}
+\subtitle{It Is Mandatory For Quantum Robots}
+\author{Zhiyang Ong}
+\institute{
+	Department of Electrical and Computer Engineering \\
+	Dwight Look College of Engineering,\\
+	Texas A\&M University \\
+	College Station, TX
+}
+\date{\today}	% (optional)
+\subject{Subject Title}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Do nothing in this section of the LaTeX document
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+%	Table of Contents
+\AtBeginSection[]		% Do nothing for \subsection*
+{
+	\begin{frame}
+%		\frametitle{\textcolor{yellow}{Table of Contents}}
+		\frametitle{Table of Contents}
+%		\textcolor{yellow}{\tableofcontents[currentsection]}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+\AtBeginSubsection[]		% Do nothing for \subsection*
+{
+\begin{frame}
+\tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Slides begin HERE!!!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Acknowledgments
+%	Slide 2
+\section{Acknowledgments}
+\begin{frame}
+	\frametitle{Acknowledgment}
+	Dott. Francesco Stefanni, University of Verona \\
+	\ \\
+	\ \\
+	\ \\
+	Soon-to-be Dr. Prateek Tandon, who initiated the formation of this reading group on quantum robotics.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Typesetting Mathematical Equations in LaTeX Documents
+\section{Model Checking}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Milestones in Model Checking (1)}
+
+	\begin{itemize} %\itemsep -3pt
+	\item Traditional Model Checking via Linear Temporal Logic (LTL) or Computational Tree Logic (CTL): \vspace{-0.2cm}
+		\begin{enumerate} % \itemsep -2pt
+		\item Clarke, Jr., E. M., Grumberg, O., and Peled, D. A. Model Checking. MIT Press, Cambridge, MA, 1999.
+		\item Baier, C., and Katoen, J.-P. Principles of Model Checking. MIT Press, Cambridge, MA, 2008.
+		\end{enumerate}
+	\item Symbolic Model Checking. McMillan, K. L. Symbolic Model Checking: An approach to the state explosion problem. PhD thesis, Carnegie Mellon University, Pittsburgh, PA, May 1992. Or, DOI: 10.1007/978-1-4615-3190-6
+	\item Bounded Model Checking. Biere, A., Cimatti, A., Clarke, E. M., Strichman, O., and Zhu, Y. Bounded model checking. In Advances in Computers, vol. 58 of Advances in Computers. Elsevier Science Publishing, New York, NY, 2003, pp. 117--148.
+	\end{itemize}
+}
+
+
+
+
+%	Slide 2
+\frame
+{
+	\frametitle{Milestones in Model Checking (2)}
+
+	\begin{itemize} %\itemsep -3pt
+	\item CounterExample-Guided Abstraction Refinement (CEGAR). Clarke, E., Grumberg, O., Jha, S., Lu, Y., and Veith, H. Counterexample-guided abstraction refinement. In Proceedings of the 12th International Conference on Computer Aided Verification (CAV 2000) (Chicago, IL, July 15?19 2000), vol. 1855 of Lecture Notes in Computer Science, Springer-Verlag Berlin Heidelberg, pp. 154?169.
+	\item Property Directed Reachability (PDR), or Incremental Construction of Inductive Clauses for Indubitable Correctness (IC3). See \url{http://theory.stanford.edu/~arbrad/}.
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Background Information}
+
+%\subsection{Background Information}
+%
+%\frame
+%{
+%	\frametitle{Coursework Related to Electronic Design Automation}
+%
+%	\begin{itemize}
+%	\item<1-> University of Southern California: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Electronic Design Automation + Digital VLSI Testing: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item EE 680 -- Computer Aided Design of Digital Systems I
+%			\item EE 599/581 -- Mathematical Foundations for Computer Aided Design of VLSI Systems
+%			\item EE 658 -- Diagnosis and Design of Reliable Digital Systems
+%			\end{itemize}
+%		\item Digital VLSI Design: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item EE 477L -- MOS VLSI Circuit Design
+%			\item EE 577A/B -- VLSI System Design
+%			\end{itemize}
+%		\end{itemize}
+%	\item<2-> University of Adelaide: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Introductory Digital VLSI Design: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item Elec Eng 4037 -- Digital Microelectronics
+%			\item Elec Eng 3017 -- Digital Electronics
+%			\end{itemize}
+%		\item Software Engineering: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			\item Comp Sci 3006 -- Software Engineering and Project
+%			\end{itemize}
+%		\item Relevant classes for my research topic: \vspace{-0.1cm}
+%			\begin{itemize} \itemsep -1pt
+%			%\item Elec Eng 4044 -- RF Engineering IV
+%			%\item Elec Eng 3021 -- Electrical Energy Systems
+%			%\item Elec Eng 4042 -- Power Electronics and Drive Systems
+%			\item Elec Eng 3015 -- Communications, Signals, \& Systems
+%			\item Elec Eng 3016 -- Control III
+%			\item Elec Eng 3018 -- RF Engineering III
+%			%\item Elec Eng 3020 -- Embedded Computer Systems
+%			\end{itemize}
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Research and Project Experience}
+%
+%\subsection{Problem Description}
+%
+%\frame
+%{
+%	\frametitle{Research Background}
+%
+%	\begin{itemize}
+%	\item<1-> Literature Review: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Robotic Surgery + Biomedical MEMS
+%		\end{itemize}
+%	\item<2-> Honors research project / Senior thesis: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Complex Systems + Evolutionary Computation
+%		\end{itemize}
+%	\item<3-> Masters Research Project: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Automatic Test Pattern Generation at Electronic System-Level (Attempted)
+%		\item Computer System Performance Analysis (vertical profiling)
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Research and Project Experience}
+
+%\subsection{Project Experience}
+%
+%\frame
+%{
+%	\frametitle{Project Experience}
+%
+%	\begin{itemize}
+%	\item<1-> EDA Software Development: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item ATPG for FPGA test generation system
+%		\item C++ Parser for IEEE STIL format
+%		\item Gate-level logic simulator for combinational VLSI circuits
+%		\item Software for crosstalk-aware gate sizing in VLSI circuits
+%		\end{itemize}
+%	\item<2-> Digital VLSI Design: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item Viterbi decoder
+%		\item 32-kbit synchronous SRAM with 32-bit words
+%		\item 64-bit Ladner-Fischer tree adder
+%		\item 32-bit variable length carry-increment adder
+%		\end{itemize}
+%	\item<3-> Processor Design: \vspace{-0.05cm}
+%		\begin{itemize} \itemsep -1pt
+%		\item 4-stage pipelined Troy Wideword Processor (128-bit datapath)
+%		\item 32-bit MIPS processor (multi-cycle \& pipeline implementations)
+%		\item AMD Am2901 microprocessor
+%		\end{itemize}
+%	\end{itemize}
+%}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Interesting Research Projects???}
+
+\subsection{Other Quantum Formal Verification Topics}
+
+
+%	Slide #1
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (1)}
+
+	\begin{itemize}
+	\item Reachability analysis: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item 
+		\item Possible solution: Quantum partially-observable Markov decision processes (QMDPs)
+		\item Reference: Shenggang Ying and Mingsheng Ying, ``Reachability Analysis of Quantum Markov Decision Processes,'' {\it arXiv}, Cornell University, Ithaca, NY, July 9, 2014. Available online from {\it arXiv} as Version 2 at: \url{http://arxiv.org/abs/1406.6146v2}; May 30, 2015 was the last accessed date.
+%	\cite{Ying2014}
+		\end{itemize}
+	\item Quantum Equivalence Checking: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item Given 2 models of a quantum robot, determine if they are functionally equivalent.
+		\item Use quantum information decision diagrams (QuIDD), global-phase equivalence, and relative-phase equivalence (Viamontes et al., 2009).
+		\item Ditto for tensor calculus, dynamic tensor products, partial tracing.
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+%	Slide #2
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (2)}
+
+	\begin{itemize}
+	\item SMT-based quantum formal verification: \vspace{-0.05cm}
+		\begin{itemize} \itemsep -1pt
+		\item Use SMT solver (decision procedure for satisfiability modulo theories) as reasoning engine for formal verification
+		\item Use reasoning/computational engine for hybrid model checking and theorem proving or model checking and equivalence checking
+		\item Use fragments of 1st-order logic, such as differential dynamic logics, for hybrid systems verification; see work by Prof. Andr{\'{e}} Platzer at \url{http://symbolaris.com/}.
+		\item Get the quantum logic equivalent of these.
+		\item References: \vspace{-0.1cm}
+			\begin{enumerate} \itemsep -1pt
+			\item Platzer, A. Logical Analysis of Hybrid Systems: Proving Theorems for Complex Dynamics. Springer- Verlag Berlin Heidelberg, Heidelberg, Germany, 2010.
+			\end{enumerate}
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+%	Slide #3
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (3)}
+
+	\begin{itemize}
+	\item Exploit equivalence of maximum satisfiability (Max-SAT), pseudo-boolean optimization (PBO) , and wighted PBO: \vspace{-0.2cm}
+		\begin{enumerate} \itemsep -2pt
+		\item Use meta-algorithms via algorithmic portfolio optimization to select the ``best'' or set of good solutions (Max-SAT, Max-SMT, PBO, or Weighted PBO).
+		\item Engineer quantum logic variant/equivalent.
+		\item Turn numerical models in the time domain to algebraic models in the frequency domain, via transform methods (e.g., Fourier transform, Laplace transform, and z-transform) and approximations via parameterization and (quasi-) linearization
+		\item The meta-algorithms enable us to plug-and-play (or plug-and-pray) components for quantum formal verification.
+		\end{enumerate}
+	\end{itemize}
+}
+
+
+
+
+
+
+%	Slide #4
+\frame
+{
+	\frametitle{Additional Formal Verification Techniques for Quantum Robots (4)}
+
+	\begin{itemize}
+	\item Use Quantum Model Order Reduction for Approximation: \vspace{-0.2cm}
+		\begin{enumerate} \itemsep -2pt
+		\item Quantum Model Order Reduction approximates components of quantum robots as continuous-time dynamical systems.
+		\item Reference: [1] Viamontes, G. F., Markov, I. L., and Hayes, J. P. Quantum Circuit Simulation. Springer Science+Business Media, B.V., Dordrecht, The Netherlands, 2009.
+		\end{enumerate}
+	\end{itemize}
+}
+
+%	quantum computation, quantum computers, quantum computing, EDA for quantum computers, quantum circuits, quantum circuit simulation, gate modeling, linear algebra, quantum mechanics, matrix algebra, matrix theory, quantum information processing, stabilizer circuits, decision diagrams, quantum information decision diagrams, QuIDD, state-vector simulation, density-matrix simulation, equivalence checking, quantum equivalence checking, global-phase equivalence, relative-phase equivalence, empirical validation, QuIDD-based simulation, tensor products, tensor algebra, tensor analysis, tensor methods, tensors, tensor calculus, dynamic tensor products, partial tracing, Grover's search algorithm, Shor's factoring algorithm
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{References}
+%
+%\frame
+%{
+%	\frametitle{References}
+%
+%%	\begin{itemize}
+%%	\item \cite{Weng2011}
+%%	\end{itemize}
+%%}
+%
+%
+%	{\linespread{1}
+%	%\bibliographystyle{IEEEtran}
+%	\bibliographystyle{plain}
+%	%\bibliography{./others/references}
+%	%\bibliography{/data/others/notes/references}
+%	\bibliography{/data/research/antipastobibtex/references}
+%	%\addcontentsline{toc}{chapter}{Bibliography}
+%	}
+%}
+
+\end{document}
+
+
+%
+%	Trying to delay the not-uncommon path of engineering Ph.D.s who end up becoming "PowerPoint engineers"... Hopefully, slapping together a bunch of presentation slides to talk about any topic in any reasonable finite amount of time is not the most useful skill that I would learn as a grad student... Hey, at least I did it in LaTeX/Beamer!!!
+
+
+
+
+
+
+ 
