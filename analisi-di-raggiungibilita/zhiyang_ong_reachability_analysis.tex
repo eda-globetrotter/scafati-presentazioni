@@ -132,7 +132,7 @@
 %	First slide of the presentation
 \title[Quantum Model Checking]
 {\huge 
-Quantum Model Checking Isn't Evil}
+Reachability Analysis of Quantum Markov Decision Processes}
 \subtitle{It Is Mandatory For Quantum Robots}
 \author{Zhiyang Ong}
 \institute{
@@ -209,25 +209,30 @@ Quantum Model Checking Isn't Evil}
 	\ \\
 	\ \\
 	\ \\
-	Reference: Ying, M., Li, Y., Yu, N., and Feng, Y. Model-checking linear-time properties of quantum systems. ACM Transactions on Computational Logic 15, 3 (July 2014), 22:1--22:31.
+	Reference: Shenggang Ying and Mingsheng Ying, ``Reachability Analysis of Quantum Markov Decision Processes,'' in {\it arXiv}, Cornell University, Ithaca, NY, July 9, 2014. Available online from {\it arXiv} as Version 2 at: \url{http://arxiv.org/abs/1406.6146} and \url{http://arxiv.org/abs/1406.6146v2}; May 30, 2015 was the last accessed date.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Quantum Model Checking Introduction
-\section{Quantum Model Checking Introduction}
+%	Classical Reachability Analysis
+\section{Classical Reachability Analysis}
 
 %	Slide 1
 \frame
 {
-	\frametitle{Background Information}
+	\frametitle{Classical Reachability Analysis}
 
 	\begin{itemize}
-	\item Designs of quantum systems (e.g., quantum robots) must be verified, tested, and validated
-	\item Formally verify these designs via quantum model checking
-	\item Carry out quantum model checking on invariants of quantum automata.
-	\item Extend this to verify safety properties for reversible automata
-	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
-	\item Meet requirements for correctness, safety, \&\ reliability
+	\item Reachability Analysis is : %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item 
+		\item E.g., A small bounded Petri Net can have many states, which are represented in the state/reachability graph. Use symmetry or stubborn set reductions, followed by creating and checking CTL formulae and predicates. Determine if a target state/marking is reachable from the initial state/marking, not necessarily via the minimal path. Check CTL properties/predicates for testing liveness properties.
+		\end{itemize}
+	\item 
+	\item 
+	\item 
+	\item References
+	
+	[1] Yuan, J., Pixley, C., and Aziz, A. Constrained-Based Verification. Springer Science+Business Media, Inc., New York, NY, 2006.
 	\end{itemize}
 }
 
