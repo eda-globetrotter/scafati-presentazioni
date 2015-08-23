@@ -31,6 +31,10 @@
 %	Import and Customize LaTeX packages.
 \usepackage{beamerthemesplit}
 
+
+%	Package for typesetting the following symbol: $\mathfrak{S}$
+%\usepackage{amssymb}
+
 %\mode<presentation>
 %{ \usetheme{boxes} }
 
@@ -196,21 +200,41 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Acknowledgments
-%	Slide 0
-\section{Acknowledgments}
+%	Preamble
+%	Slide #1
+\section{Preamble}
 \begin{frame}
 	\frametitle{Acknowledgments}
 	Dott. Francesco Stefanni, University of Verona \\
 	\ \\
 	\ \\
 	\ \\
-	Soon-to-be Dr. Prateek Tandon, who initiated the formation of this reading group on quantum robotics.
+	Dr. Prateek Tandon, who initiated the formation of this reading group on quantum robotics.
 	\ \\
 	\ \\
 	\ \\
 	Reference: Shenggang Ying and Mingsheng Ying, ``Reachability Analysis of Quantum Markov Decision Processes,'' in {\it arXiv}, Cornell University, Ithaca, NY, July 9, 2014. Available online from {\it arXiv} as Version 2 at: \url{http://arxiv.org/abs/1406.6146} and \url{http://arxiv.org/abs/1406.6146v2}; May 30, 2015 was the last accessed date.
 \end{frame}
+
+
+
+%	Slide #2
+\frame
+{
+	\frametitle{Warning!!!}
+
+	\begin{itemize}
+	\item Research publications on formal verification or formal methods have lots of definitions.
+	\item Exact/Approximate algorithms and heuristics for formal verification or formal methods are based on these definitions.
+	\item Hence, exact definitions of terms in formal verification or formal methods are required for proving these algorithms and heuristics and theorems.
+	\end{itemize}
+}
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Classical Reachability Analysis
@@ -224,10 +248,12 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	\begin{itemize}
 	\item Reachability Analysis is : %\vspace{-0.3cm}
 		\begin{itemize} %\itemsep -2pt
-		\item 
+		\item Definition of reachable state in a Petri Net or FSM.
+		\item Define reachability analysis, based on the definition of the reachability of a state in a Petri Net or FSM.
 		\item E.g., A small bounded Petri Net can have many states, which are represented in the state/reachability graph. Use symmetry or stubborn set reductions, followed by creating and checking CTL formulae and predicates. Determine if a target state/marking is reachable from the initial state/marking, not necessarily via the minimal path. Check CTL properties/predicates for testing liveness properties.
+		\item Give more examples of reachability analysis
 		\end{itemize}
-	\item 
+	\item Explain the importance of reachability analysis
 	\item 
 	\item 
 	\item References
@@ -235,6 +261,8 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	[1] Yuan, J., Pixley, C., and Aziz, A. Constrained-Based Verification. Springer Science+Business Media, Inc., New York, NY, 2006.
 	\end{itemize}
 }
+
+
 
 
 
@@ -249,31 +277,35 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	\frametitle{Problem Statement}
 
 	\begin{itemize} %\itemsep -2pt
-	\item Verify functional correctness of quantum systems.
-	\item Input: Description of system behavior
-		\begin{itemize}
-		\item i.e., specifications based on quantum automata
-		\end{itemize}
-	\item Input: Functional linear-time properties
-		\begin{itemize}
-		\item Linear-time invariants of quantum automata-based model
-		\end{itemize}
+	\item Models of concurrent and nondeterministic quantum systems need to be verified.
+	\item Quantum Markov decision processes (qMDPs) can model such quantum systems.
+	\item Question: How can we carry out reachability analysis on concurrent and nondeterministic quantum systems, modeled as qMDPs?
+	\item Input: qMDP $\mathcal{M}$
+	\item Input: state space $\mathcal{H}$, which is a Hilbert space
+	\item Input: state space $B \in \mathcal{H}$
+	\item Output: Scheduler $\mathfrak{S}$
+	\item Output: Non-negative integer, $n$.
+%	\item Input: Description of system behavior
+%		\begin{itemize}
+%		\item i.e., specifications based on quantum automata
+%		\end{itemize}
+%	\item Input: Functional linear-time properties
+%		\begin{itemize}
+%		\item Linear-time invariants of quantum automata-based model
+%		\end{itemize}
 	%\item System model based on quantum automata
 	%\item System propeties (i.e., invariants): invariants of quantum automata-based model.
-	\item Output: Boolean flag indicating correct/incorrect system behavior/functionality
-	\item Examine only a finite number of representative elements of the state space of a quantum system
-		\begin{itemize}
-		\item Or at most countably infinitely many representative elements
-		\end{itemize}
+	%\item Output: Boolean flag indicating correct/incorrect system behavior/functionality
 	\end{itemize}
 }
+
 
 
 
 %	Slide 3
 \frame
 {
-	\frametitle{Shortcomings of Traditional Model Checking}
+	\frametitle{Shortcomings of Classical Reachability Analysis}
 
 	\begin{itemize} %\itemsep -3pt
 	\item Cannot formalize behavior/functionality of quantum systems
@@ -304,7 +336,7 @@ Reachability Analysis of Quantum Markov Decision Processes}
 %	Slide 4
 \frame
 {
-	\frametitle{Prior Work}
+	\frametitle{Prior and Related Work}
 
 	\begin{itemize}
 	\item Almost all previous work use model checking to verify quantum communication protocols
@@ -370,12 +402,7 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	\frametitle{Key Contributions of (Ying 2014)}
 
 	\begin{itemize}
-	\item Almost all previous work use model checking to verify quantum communication protocols
-	\item Use quantum process algebra to verify quantum communication systems, including quantum error correction codes
-	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
-	\item Extend this to verify safety properties for reversible automata
-	\item Extend this to verify $\omega$-properties for reversible B{\"{u}}chi automata
-	\item Meet requirements for correctness, safety, \&\ reliability
+	\item 
 	\end{itemize}
 }
 
@@ -516,30 +543,18 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Interesting Research Projects???}
+\section{Analysis on Decidability of Quantum Reachability Analysis}
 
-\subsection{Other Quantum Formal Verification Topics}
+\subsection{In the Finite-Horizon}
 
 
 %	Slide #1
 \frame
 {
-	\frametitle{Additional Formal Verification Techniques for Quantum Robots (1)}
+	\frametitle{Analysis on Decidability of Quantum Reachability Analysis In the Finite-Horizon}
 
 	\begin{itemize}
-	\item Reachability analysis: \vspace{-0.05cm}
-		\begin{itemize} \itemsep -1pt
-		\item 
-		\item Possible solution: Quantum partially-observable Markov decision processes (QMDPs)
-		\item Reference: Shenggang Ying and Mingsheng Ying, ``Reachability Analysis of Quantum Markov Decision Processes,'' {\it arXiv}, Cornell University, Ithaca, NY, July 9, 2014. Available online from {\it arXiv} as Version 2 at: \url{http://arxiv.org/abs/1406.6146v2}; May 30, 2015 was the last accessed date.
-%	\cite{Ying2014}
-		\end{itemize}
-	\item Quantum Equivalence Checking: \vspace{-0.05cm}
-		\begin{itemize} \itemsep -1pt
-		\item Given 2 models of a quantum robot, determine if they are functionally equivalent.
-		\item Use quantum information decision diagrams (QuIDD), global-phase equivalence, and relative-phase equivalence (Viamontes et al., 2009).
-		\item Ditto for tensor calculus, dynamic tensor products, partial tracing.
-		\end{itemize}
+	\item 
 	\end{itemize}
 }
 
@@ -552,23 +567,13 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 
 
-%	Slide #2
+%	Slide #1
 \frame
 {
-	\frametitle{Additional Formal Verification Techniques for Quantum Robots (2)}
+	\frametitle{Analysis on Decidability of Quantum Reachability Analysis In the Infinite-Horizon}
 
 	\begin{itemize}
-	\item SMT-based quantum formal verification: \vspace{-0.05cm}
-		\begin{itemize} \itemsep -1pt
-		\item Use SMT solver (decision procedure for satisfiability modulo theories) as reasoning engine for formal verification
-		\item Use reasoning/computational engine for hybrid model checking and theorem proving or model checking and equivalence checking
-		\item Use fragments of 1st-order logic, such as differential dynamic logics, for hybrid systems verification; see work by Prof. Andr{\'{e}} Platzer at \url{http://symbolaris.com/}.
-		\item Get the quantum logic equivalent of these.
-		\item References: \vspace{-0.1cm}
-			\begin{enumerate} \itemsep -1pt
-			\item Platzer, A. Logical Analysis of Hybrid Systems: Proving Theorems for Complex Dynamics. Springer- Verlag Berlin Heidelberg, Heidelberg, Germany, 2010.
-			\end{enumerate}
-		\end{itemize}
+	\item 
 	\end{itemize}
 }
 
@@ -577,21 +582,20 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Analysis on Complexity of Quantum Reachability Analysis}
+
+\subsection{In the Finite-Horizon}
 
 
-%	Slide #3
+%	Slide #1
 \frame
 {
-	\frametitle{Additional Formal Verification Techniques for Quantum Robots (3)}
+	\frametitle{Analysis on Complexity of Quantum Reachability Analysis In the Finite-Horizon}
 
 	\begin{itemize}
-	\item Exploit equivalence of maximum satisfiability (Max-SAT), pseudo-boolean optimization (PBO) , and wighted PBO: \vspace{-0.2cm}
-		\begin{enumerate} \itemsep -2pt
-		\item Use meta-algorithms via algorithmic portfolio optimization to select the ``best'' or set of good solutions (Max-SAT, Max-SMT, PBO, or Weighted PBO).
-		\item Engineer quantum logic variant/equivalent.
-		\item Turn numerical models in the time domain to algebraic models in the frequency domain, via transform methods (e.g., Fourier transform, Laplace transform, and z-transform) and approximations via parameterization and (quasi-) linearization
-		\item The meta-algorithms enable us to plug-and-play (or plug-and-pray) components for quantum formal verification.
-		\end{enumerate}
+	\item 
 	\end{itemize}
 }
 
@@ -600,21 +604,45 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 
 
-%	Slide #4
+
+
+
+
+%	Slide #1
 \frame
 {
-	\frametitle{Additional Formal Verification Techniques for Quantum Robots (4)}
+	\frametitle{Analysis on Complexity of Quantum Reachability Analysis In the Infinite-Horizon}
 
 	\begin{itemize}
-	\item Use Quantum Model Order Reduction for Approximation: \vspace{-0.2cm}
-		\begin{enumerate} \itemsep -2pt
-		\item Quantum Model Order Reduction approximates components of quantum robots as continuous-time dynamical systems.
-		\item Reference: [1] Viamontes, G. F., Markov, I. L., and Hayes, J. P. Quantum Circuit Simulation. Springer Science+Business Media, B.V., Dordrecht, The Netherlands, 2009.
-		\end{enumerate}
+	\item 
 	\end{itemize}
 }
 
-%	quantum computation, quantum computers, quantum computing, EDA for quantum computers, quantum circuits, quantum circuit simulation, gate modeling, linear algebra, quantum mechanics, matrix algebra, matrix theory, quantum information processing, stabilizer circuits, decision diagrams, quantum information decision diagrams, QuIDD, state-vector simulation, density-matrix simulation, equivalence checking, quantum equivalence checking, global-phase equivalence, relative-phase equivalence, empirical validation, QuIDD-based simulation, tensor products, tensor algebra, tensor analysis, tensor methods, tensors, tensor calculus, dynamic tensor products, partial tracing, Grover's search algorithm, Shor's factoring algorithm
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion and Suggested Future Work}
+
+%\subsection{Yet to be defined}
+
+
+%	Slide #1
+\frame
+{
+	\frametitle{Discussion and Suggested Future Work}
+
+	\begin{itemize}
+	\item 
+	\end{itemize}
+}
 
 
 
