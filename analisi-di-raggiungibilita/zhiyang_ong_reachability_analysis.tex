@@ -230,6 +230,9 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	\item This set of presentation slides does not cover the paper in the same order.
 	\item Some rearrangements are made to present the material as a hybrid of a brief research presentation and tutorial.
 %	\item introduce the notion of reachability analysis, from classical/traditional formal verification, before reachability analysis is introduced for formally verifying quantum systems, including quantum robots.
+	\item $\underline{\varrho}_{\kappa}$
+	\item $\overline{\varrho}_{\kappa}$
+	\item $\rho$
 	\end{itemize}
 }
 
@@ -323,6 +326,7 @@ Reachability Analysis of Quantum Markov Decision Processes}
 		\item Always preserve the linear algebraic structure of the representative elements [\& linear-time properties]
 		\end{itemize}
 	\item Cannot formally describe temporal properties of quantum systems
+	\item The (Ying 2014) paper address quantum programs. However, the modeling of quantum programs can be extended for quantum systems, including quantum robots?
 	\end{itemize}
 }
 
@@ -347,9 +351,11 @@ Reachability Analysis of Quantum Markov Decision Processes}
 	\item Almost all previous work use model checking to verify quantum communication protocols
 	\item Use quantum process algebra to verify quantum communication systems, including quantum error correction codes
 	\item Use simulation tools for quantum systems to verify their behavior/functionality, especially their correctness and safety properties
-	\item $\underline{\varrho}_{\kappa}$
-	\item $\overline{\varrho}_{\kappa}$
-	\item $\rho$
+	\item Quantum partially observable Markov decision processes (QOMDPs), which are introduced by (Barry, Barry, and Aaronson, 2014), only care about the reachability of a single state (i.e., goal state).: %\vspace{-0.2cm}
+		\begin{itemize} \itemsep -2pt
+		\item The paper does not specifically address the reachability of invariant subspaces.
+		\item Goal-state reachability is undecidable for QOMDPs.
+		\end{itemize}
 	\end{itemize}
 }
 
@@ -646,7 +652,9 @@ something that transforms you into the same space
 	\frametitle{Questions That I Have}
 
 	\begin{itemize}
-	\item I assume that uncomputable problems are the same as undecidable problems [Barry, Barry, and Aaronson, 2014]. Is this actually true?
+	\item I assume that uncomputable problems are the same as undecidable problems (Barry, Barry, and Aaronson, 2014). Is this actually true?
+	\item From (Barry, Barry, and Aaronson, 2014), can QOMDPs be reduced to qMDPs?
+	\item The authors mentioned that quantum systems can be modeled as qMDPs? Do such quantum systems include robots, which can be modeled as quantum dynamical systems? Or, is it restricted to quantum computer programs?
 	\item What is the ortho-complement of a subspace?
 %	See page 2, left column, in the middle of the 3rd/4th paragraph that starts with the following in bold, "Contribution of the paper".
 	\item What does it mean for a measurement to be projective? What does it mean? And, what does it mean mathematically?
