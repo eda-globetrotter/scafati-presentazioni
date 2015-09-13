@@ -19,7 +19,8 @@
 
 %	Acknowledgement:
 %		This is based on a template provided to me by Dott. Francesco Stefanni, from the University of Verona in January 2011.
-
+%
+%	Number the slides per section. This makes it easier to track the index of the slides (or number of slides) per section, as opposed to the cumulative number of slides. When I manually track the number of slides for a presentation, each time I refactor the set of slides, I would have to update the slide numbers. I want the computer to do this automatically. Hence, I shall not do this manually.
 
 
 
@@ -201,6 +202,7 @@ Reachability Analysis of Quantum Markov Decision Processes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Preamble
+
 %	Slide #1
 \section{Preamble}
 \begin{frame}
@@ -251,6 +253,8 @@ Reachability Analysis of Quantum Markov Decision Processes}
 {
 	\frametitle{Classical Reachability Analysis}
 
+	If there exists a path from vertex $s$ in a graph $G$ to vertex $t$ in $G$, $t$ is reachable from $s$. All vertices in $G$ are ``reachable from themselves'' (Yuan, 2006, \S5.2, pp. 85).
+	
 	\begin{itemize}
 	\item Reachability Analysis is : %\vspace{-0.3cm}
 		\begin{itemize} %\itemsep -2pt
@@ -259,14 +263,49 @@ Reachability Analysis of Quantum Markov Decision Processes}
 		\item E.g., A small bounded Petri Net can have many states, which are represented in the state/reachability graph. Use symmetry or stubborn set reductions, followed by creating and checking CTL formulae and predicates. Determine if a target state/marking is reachable from the initial state/marking, not necessarily via the minimal path. Check CTL properties/predicates for testing liveness properties.
 		\item Give more examples of reachability analysis
 		\end{itemize}
-	\item Explain the importance of reachability analysis
-	\item 
-	\item 
-	\item References
-	
-	[1] Yuan, J., Pixley, C., and Aziz, A. Constrained-Based Verification. Springer Science+Business Media, Inc., New York, NY, 2006.
+	\item Explain the importance of reachability analysis	
 	\end{itemize}
 }
+
+
+
+%	Slide 2
+\frame
+{
+	\frametitle{Classical Reachability Analysis}
+
+	Reachability analysis is defined as follows:% \vspace{-0.3cm}
+	\begin{enumerate} %\itemsep -2pt
+	\item ``A fixed-point analysis'' technique to determine if a ``set of states [is] reachable from a designated set of initial states'' (Yuan, 2006, \S1.8.2., pp. 16).
+	\item 
+	\end{enumerate}
+	
+	
+	
+	\begin{itemize}
+	\item  : %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item Definition of reachable state in a Petri Net or FSM.
+		\item Define reachability analysis, based on the definition of the reachability of a state in a Petri Net or FSM.
+		\item E.g., A small bounded Petri Net can have many states, which are represented in the state/reachability graph. Use symmetry or stubborn set reductions, followed by creating and checking CTL formulae and predicates. Determine if a target state/marking is reachable from the initial state/marking, not necessarily via the minimal path. Check CTL properties/predicates for testing liveness properties.
+		\item Give more examples of reachability analysis
+		\end{itemize}
+	\item Explain the importance of reachability analysis	
+	\end{itemize}
+}
+
+
+
+%	Slide 3
+\frame
+{
+	\frametitle{References for Classical Reachability Analysis}
+
+	(Yuan, 2006) Yuan, J., Pixley, C., and Aziz, A. Constrained-Based Verification. Springer Science+Business Media, Inc., New York, NY, 2006.
+}
+
+
+
 
 
 
